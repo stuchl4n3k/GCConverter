@@ -1,0 +1,89 @@
+                   GC Converter Geocaching LOC to LMX converter
+                   --------------------------------------------
+
+                          http://stuchl4n3k.net
+
+
+Contents
+--------
+
+1. New in this version
+2. Troubleshooting
+3. Compatibility issues
+4. Contact
+5. Support
+6. License and Copyright
+
+
+
+1. Changes in this version
+--------------------------
+
+* 1.0 RC1
+Bug fixes:
+ - cache size is getting loaded correctly again
+Features:
+ - Structure was completely rewritten
+ - Layout improvements (icons, Substance LAF, etc.)
+ - Stability was improved
+License change:
+ - GCConverter is now being released under Apache Software License 2.0
+
+* New in 0.1
+Features:
+ - Import geocaches stored in LOC files
+ - Storing geocaches in SQLite DB
+ - Export geocaches into LMX format (Nokia Maps)
+ - Automatic and on-demand loading of additional informations like cache-size,
+    cache-type and hint from www.geocaching.com
+
+Known limitations:
+ - GC Converter currently leaks support of multi-waypoint caches or waypoint-paths
+
+
+
+2. Troubleshooting
+------------------
+
+If you have problems with GC Converter:
+
+Submit a bugreport comment at http://stuchl4n3k.net/gc-converter
+
+
+
+3. Compatibility issues
+-----------------------
+
+Latest version of JRE (Java Runtime Environment) is required to run GC Converter.
+
+
+
+4. Contact
+----------
+
+The official webpage for the GC Converter project is http://stuchl4n3k.net.
+
+
+
+5. Support
+----------
+
+GC Converter is provided free of charge but without any warranty or support.
+
+If you have difficulties using GC Converter, you can find some resources
+on the website: http://stuchl4n3k.net
+
+You can also ask for help in the official forums and someone will try to help.
+But remember; everyone involved in the GC Converter project are volunteers, as
+in "does not get paid". So please be friendly and your chances of getting help
+will increase.
+
+
+
+6. License and Copyright
+------------------------
+
+Source code is available on GitHub at: http://peeters.22web.net
+
+GC Converter is free opensource project and is released under the terms 
+of Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0).
