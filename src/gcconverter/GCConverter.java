@@ -40,7 +40,6 @@ public class GCConverter {
 
             public void run() {
                 try {
-                    //new org.pushingpixels.substance.api.skin.RavenSkin()
                     javax.swing.UIManager.setLookAndFeel(new SubstanceBusinessBlackSteelLookAndFeel());
                     JFrame.setDefaultLookAndFeelDecorated(true);
                     JDialog.setDefaultLookAndFeelDecorated(true);
