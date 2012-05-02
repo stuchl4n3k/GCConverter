@@ -1,7 +1,10 @@
 package gcconverter;
 
 import gcconverter.component.MainForm;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.pushingpixels.substance.api.skin.SubstanceBusinessBlackSteelLookAndFeel;
 import org.pushingpixels.substance.api.skin.SubstanceModerateLookAndFeel;
 
 /**
@@ -38,9 +41,10 @@ public class GCConverter {
             public void run() {
                 try {
                     //new org.pushingpixels.substance.api.skin.RavenSkin()
-                    javax.swing.UIManager.setLookAndFeel(new SubstanceModerateLookAndFeel());
+                    javax.swing.UIManager.setLookAndFeel(new SubstanceBusinessBlackSteelLookAndFeel());
+                    JFrame.setDefaultLookAndFeelDecorated(true);
+                    JDialog.setDefaultLookAndFeelDecorated(true);
                 } catch (UnsupportedLookAndFeelException ex) {
-                    ex.printStackTrace();
                 }
                 
                 MainForm view = new MainForm();
