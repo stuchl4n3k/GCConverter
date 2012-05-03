@@ -23,9 +23,12 @@ import javax.swing.filechooser.FileFilter;
  * @author stuchl4n3k
  */
 public class MainForm extends javax.swing.JFrame {
+    
+    private MainController controller;
 
     /** Creates new form MainForm */
-    public MainForm() {
+    public MainForm(MainController controller) {
+        this.controller = controller;
         initComponents();
         initMyComponents();
     }
@@ -416,7 +419,7 @@ public class MainForm extends javax.swing.JFrame {
     private void cacheTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cacheTableMouseClicked
         int row = cacheTable.getSelectedRow();
         String id = (String) cacheTable.getModel().getValueAt(row, 0);
-        Waypoint w = MainController.get().getWaypointById(id);
+        Waypoint w = controller.getWaypointById(id);
         openWaypoint(w);
     }//GEN-LAST:event_cacheTableMouseClicked
 
@@ -530,12 +533,12 @@ public class MainForm extends javax.swing.JFrame {
         if (w == null) {
             return;
         }
-        MainController.get().setCurrentWaypoint(w);
+        controller.setCurrentWaypoint(w);
         refreshCurrentWaypoint();
     }
 
     private void refreshCurrentWaypoint() {
-        Waypoint w = MainController.get().getCurrentWaypoint();
+        Waypoint w = controller.getCurrentWaypoint();
         if (w == null) {
             return;
         }
@@ -554,7 +557,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     private void removeCurrentWaypoint() {
-        Waypoint w = MainController.get().getCurrentWaypoint();
+        Waypoint w = controller.getCurrentWaypoint();
         if (w == null) {
             return;
         }
@@ -563,14 +566,14 @@ public class MainForm extends javax.swing.JFrame {
             return;
         }
 
-        MainController.get().deleteCurrentWaypoint();
+        controller.deleteCurrentWaypoint();
         refreshTable();
         disableControls();
     }
 
     private void refreshTable() {
         cacheTable.removeAll();
-        ArrayList<Waypoint> wpts = MainController.get().getWaypoints();
+        ArrayList<Waypoint> wpts = controller.getWaypoints();
 
         String[] cols = {"ID", "Name", "Type"};
         Object[][] data = new Object[wpts.size()][];
@@ -598,7 +601,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     private void reloadCurrentWaypoint() {
-        boolean res = MainController.get().reloadCurrentWaypoint();
+        boolean res = controller.reloadCurrentWaypoint();
         if (!res) {
             JOptionPane.showMessageDialog(this, "Could not reload the cache. \nCheck your Internet connection.", "Connection error", JOptionPane.WARNING_MESSAGE);
             return;
@@ -629,9 +632,9 @@ public class MainForm extends javax.swing.JFrame {
         }
         
         if (exportAll) {
-            ExportController.get().exportLMX(outputFile, MainController.get().getWaypoints());
+            ExportController.get().exportLMX(outputFile, controller.getWaypoints());
         } else {
-            ExportController.get().exportLMX(outputFile, MainController.get().getCurrentWaypoint());
+            ExportController.get().exportLMX(outputFile, controller.getCurrentWaypoint());
         }
     }
     
@@ -643,16 +646,16 @@ public class MainForm extends javax.swing.JFrame {
 	    return;
 	}
         
-        int size = MainController.get().getWaypoints().size();
+        int size = controller.getWaypoints().size();
 	File importFile = fileChooser.getSelectedFile();	// get file
 	ArrayList<Waypoint> newWaypoints = ImportController.get().importLOC(importFile);   // import waypoints
         if (newWaypoints == null) {
             newWaypoints = new ArrayList<>();
         }
-        MainController.get().addWaypoints(newWaypoints);
+        controller.addWaypoints(newWaypoints);
 	refreshTable();	// refresh view
         
-        size = MainController.get().getWaypoints().size() - size;
+        size = controller.getWaypoints().size() - size;
 	JOptionPane.showMessageDialog(this, size + (size == 1 ? " cache was" : " caches were") + " imported");
     }
 

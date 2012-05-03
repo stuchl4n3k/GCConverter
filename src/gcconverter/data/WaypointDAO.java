@@ -1,6 +1,6 @@
 package gcconverter.data;
 
-import gcconverter.GCConverter;
+import gcconverter.Main;
 import gcconverter.entity.Waypoint;
 import gcconverter.util.HTMLParser;
 import java.sql.*;
@@ -127,7 +127,7 @@ public class WaypointDAO {
     }
     
     public boolean reloadWaypoint(Waypoint w) {
-        HTMLParser parser = new HTMLParser(GCConverter.CACHE_DETAILS_BASE_URL + w.getId());
+        HTMLParser parser = new HTMLParser(Main.CACHE_DETAILS_BASE_URL + w.getId());
         if (!parser.connect()) {
             System.out.println("could not connect to gc.com");
             return false;

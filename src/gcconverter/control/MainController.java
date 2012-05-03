@@ -1,5 +1,6 @@
 package gcconverter.control;
 
+import gcconverter.Application;
 import gcconverter.data.WaypointDAO;
 import gcconverter.entity.Waypoint;
 import java.util.ArrayList;
@@ -10,21 +11,15 @@ import java.util.ArrayList;
  */
 public class MainController {
 
-    private static MainController instance;
+    private Application application;
     private Waypoint currentWaypoint;
     private ArrayList<Waypoint> waypoints;
 
-    private MainController() {
+    public MainController(Application application) {
+        this.application = application;
         currentWaypoint = null;
         waypoints = new ArrayList<>();
         loadWaypoints();
-    }
-    
-    public static MainController get() {
-        if (instance == null) {
-            instance = new MainController();
-        }
-        return instance;
     }
 
     private void loadWaypoints() {
