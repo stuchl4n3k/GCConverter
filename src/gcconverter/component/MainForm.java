@@ -257,7 +257,6 @@ public class MainForm extends javax.swing.JFrame {
         importLOCButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         importLOCButton.setMaximumSize(new java.awt.Dimension(70, 60));
         importLOCButton.setMinimumSize(new java.awt.Dimension(70, 60));
-        importLOCButton.setModel(null);
         importLOCButton.setPreferredSize(new java.awt.Dimension(70, 60));
         importLOCButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         importLOCButton.addActionListener(new java.awt.event.ActionListener() {
@@ -298,7 +297,6 @@ public class MainForm extends javax.swing.JFrame {
         exportLMXButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         exportLMXButton.setMaximumSize(new java.awt.Dimension(70, 60));
         exportLMXButton.setMinimumSize(new java.awt.Dimension(70, 60));
-        exportLMXButton.setModel(null);
         exportLMXButton.setOpaque(false);
         exportLMXButton.setPreferredSize(new java.awt.Dimension(70, 60));
         exportLMXButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -319,7 +317,6 @@ public class MainForm extends javax.swing.JFrame {
         reloadButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         reloadButton.setMaximumSize(new java.awt.Dimension(70, 60));
         reloadButton.setMinimumSize(new java.awt.Dimension(70, 60));
-        reloadButton.setModel(null);
         reloadButton.setOpaque(false);
         reloadButton.setPreferredSize(new java.awt.Dimension(70, 60));
         reloadButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -340,7 +337,6 @@ public class MainForm extends javax.swing.JFrame {
         removeButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         removeButton.setMaximumSize(new java.awt.Dimension(70, 60));
         removeButton.setMinimumSize(new java.awt.Dimension(70, 60));
-        removeButton.setModel(null);
         removeButton.setOpaque(false);
         removeButton.setPreferredSize(new java.awt.Dimension(70, 60));
         removeButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
