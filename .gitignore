@@ -1,7 +1,4 @@
 
 /build
-/dist/README.TXT
-/nbproject
+/dist
 /gcconverter.db
-/manifest.mf
-/build.xml

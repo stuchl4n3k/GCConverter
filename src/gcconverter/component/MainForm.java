@@ -23,7 +23,7 @@ import javax.swing.filechooser.FileFilter;
  * @author stuchl4n3k
  */
 public class MainForm extends javax.swing.JFrame {
-    
+
     private MainController controller;
 
     /** Creates new form MainForm */
@@ -79,7 +79,7 @@ public class MainForm extends javax.swing.JFrame {
         menuAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("GC Converter 1.0 RC1");
+        setTitle("GC Converter 1.1");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         formPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -257,6 +257,7 @@ public class MainForm extends javax.swing.JFrame {
         importLOCButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         importLOCButton.setMaximumSize(new java.awt.Dimension(70, 60));
         importLOCButton.setMinimumSize(new java.awt.Dimension(70, 60));
+        importLOCButton.setModel(null);
         importLOCButton.setPreferredSize(new java.awt.Dimension(70, 60));
         importLOCButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         importLOCButton.addActionListener(new java.awt.event.ActionListener() {
@@ -297,6 +298,7 @@ public class MainForm extends javax.swing.JFrame {
         exportLMXButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         exportLMXButton.setMaximumSize(new java.awt.Dimension(70, 60));
         exportLMXButton.setMinimumSize(new java.awt.Dimension(70, 60));
+        exportLMXButton.setModel(null);
         exportLMXButton.setOpaque(false);
         exportLMXButton.setPreferredSize(new java.awt.Dimension(70, 60));
         exportLMXButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -317,6 +319,7 @@ public class MainForm extends javax.swing.JFrame {
         reloadButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         reloadButton.setMaximumSize(new java.awt.Dimension(70, 60));
         reloadButton.setMinimumSize(new java.awt.Dimension(70, 60));
+        reloadButton.setModel(null);
         reloadButton.setOpaque(false);
         reloadButton.setPreferredSize(new java.awt.Dimension(70, 60));
         reloadButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -337,6 +340,7 @@ public class MainForm extends javax.swing.JFrame {
         removeButton.setMargin(new java.awt.Insets(2, 10, 2, 10));
         removeButton.setMaximumSize(new java.awt.Dimension(70, 60));
         removeButton.setMinimumSize(new java.awt.Dimension(70, 60));
+        removeButton.setModel(null);
         removeButton.setOpaque(false);
         removeButton.setPreferredSize(new java.awt.Dimension(70, 60));
         removeButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -630,14 +634,14 @@ public class MainForm extends javax.swing.JFrame {
         if (outputFile == null) {
             return;
         }
-        
+
         if (exportAll) {
             ExportController.get().exportLMX(outputFile, controller.getWaypoints());
         } else {
             ExportController.get().exportLMX(outputFile, controller.getCurrentWaypoint());
         }
     }
-    
+
     private void importLOC() {
 	fileChooser.resetChoosableFileFilters();
 	fileChooser.setAcceptAllFileFilterUsed(false);
@@ -645,7 +649,7 @@ public class MainForm extends javax.swing.JFrame {
 	if (fileChooser.showOpenDialog(this) == JFileChooser.CANCEL_OPTION) {
 	    return;
 	}
-        
+
         int size = controller.getWaypoints().size();
 	File importFile = fileChooser.getSelectedFile();	// get file
 	ArrayList<Waypoint> newWaypoints = ImportController.get().importLOC(importFile);   // import waypoints
@@ -654,7 +658,7 @@ public class MainForm extends javax.swing.JFrame {
         }
         controller.addWaypoints(newWaypoints);
 	refreshTable();	// refresh view
-        
+
         size = controller.getWaypoints().size() - size;
 	JOptionPane.showMessageDialog(this, size + (size == 1 ? " cache was" : " caches were") + " imported");
     }

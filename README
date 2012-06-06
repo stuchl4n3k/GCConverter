@@ -18,6 +18,11 @@ Contents
 
 1. Changes in this version
 --------------------------
+* 1.1
+Bug fixes:
+ - LnF enchancements (window decoration, thx to f3l1x)
+Featues:
+ - Pompous splash screen was added
 
 * 1.0 RC1
 Bug fixes:
@@ -85,5 +90,5 @@ will increase.
 
 Source code is available on GitHub at: https://github.com/stuchl4n3k/GCConverter
 
-GC Converter is free opensource project and is released under the terms 
+GC Converter is free opensource project and is released under the terms
 of Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0).
